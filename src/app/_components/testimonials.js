@@ -10,10 +10,10 @@ export const Testimonials = () => {
           about Our Digital Marketing Services
         </p>
       </div>
-      <div className=" w-[1240] h-[625] bg-[#191A23] rounded-4xl flex flex-col gap-25 items-center justify-center ">
-        <div className=" flex justify-baseline gap-10">
-          <div className=" w-[606] h-[335] ">
-            <div className=" w-[606] h-[266]  border border-green-600 rounded-3xl flex justify-center items-center ">
+      <div className=" w-[1240] h-[625] bg-[#191A23] rounded-4xl flex flex-col gap-25 items-center justify-center relative overflow-hidden">
+        <div className=" flex  gap-10 ">
+          <div className=" w-[606] h-[335] absolute left-[-328] ">
+            <div className=" w-[606] h-[250]  border border-green-600 rounded-3xl flex justify-center items-center ">
               <p className=" w-[502] h-[138]">
                 We have been working with Positivus for the past year and have
                 seen a significant increase in website traffic and leads as a
@@ -40,7 +40,7 @@ export const Testimonials = () => {
               <p>Marketing Director at XYZ Corp</p>
             </div>
           </div>
-          <div className=" w-[606] h-[335] flex flex-col  items-end gap-10">
+          <div className=" w-[606] h-[335] flex flex-col  items-end gap-10 absolute left-240">
             <div className=" w-[606] h-[266]  border border-green-600 rounded-3xl flex justify-center items-center ">
               <p className=" w-[502] h-[138]">
                 "We have been working with Positivus for the past year and have
@@ -57,7 +57,13 @@ export const Testimonials = () => {
             </div>
           </div>
         </div>
-        <div className="w-[564] h-[14] border border-white"> </div>
+
+        <div className="w-[500] h-[14]  flex gap-5 justify-center">
+          <div className="bg-green-500 rounded-2xl w-[14] h-[14] "></div>
+          <div className="bg-white rounded-2xl w-[14] h-[14] "></div>
+          <div className="bg-white rounded-2xl w-[14] h-[14] "></div>
+          <div className="bg-white rounded-2xl w-[14] h-[14] "></div>
+        </div>
       </div>
     </div>
   );

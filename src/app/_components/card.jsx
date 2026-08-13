@@ -67,10 +67,11 @@ export const Card = () => {
             >
               <div className="flex gap-15 justify-center items-center w-[600] h-[310]">
                 <div className="flex flex-col gap-25 w-[197] h-[210] ">
-                  <div className="text-2xl text-black bg-[#B9FF66] w-[160]">
+                  <div className="text-2xl text-black  bg-[#B9FF66] w-[160]">
                     {item.h1}
                   </div>
-                  <div className="">{item.p}</div>
+                
+                  <div className="text-2xl text-[#0e0000] ">{item.p}</div>
                 </div>
                 <img src={item.img} />
               </div>

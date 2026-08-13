@@ -24,16 +24,16 @@ export const Contacts = () => {
           </div>
           <div className="w-[556] h-[457] flex flex-col gap-5">
             <div className="w-[556] h-[223] flex gap-[8]">
-              <div>
+              <div className="flex flex-col gap-3 ">
                 <p>Name</p>
                 <div className="w-[556] h-[59] border border-gray-400 rounded-2xl"></div>
               </div>
             </div>
-            <div>
+            <div className="flex flex-col gap-3 ">
               <p>Email*</p>
               <div className="w-[556] h-[59] border border-gray-400 rounded-2xl"></div>
             </div>
-            <div>
+            <div className="flex flex-col gap-3 ">
               <p>Message*</p>
               <div className="w-[556] h-[190] border border-gray-400 rounded-2xl"></div>
             </div>

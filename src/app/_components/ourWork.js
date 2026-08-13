@@ -40,9 +40,12 @@ export const OurWork = () => {
 
       <div className=" w-[1234] h-[274] bg-[#B9FF66] rounded-4xl border-black flex flex-col items-center justify-center gap-10 text-black ">
         <div className=" w-[1117] h-[77] flex gap-[357] justify-center items-center  ">
-          <div className=" flex gap-10 justify-center items-center">
+          <div className=" flex gap-10 justify-center items-center relative">
             <h1 className="text-7xl w-[65] h-[77]">01</h1>
             <h2 className="w-[612] h-[38] text-3xl">Consultation</h2>
+            <div className="absolute text-5xl text-black right-[-400] bottom-4">
+              +
+            </div>
           </div>
           <img src="/Ellipse 30.png" />
         </div>
@@ -57,7 +60,7 @@ export const OurWork = () => {
         {navs.map((j) => {
           return (
             <div
-              key={j}
+              key={j.h1}
               style={{
                 width: "1234px",
                 height: "159px",
@@ -68,9 +71,12 @@ export const OurWork = () => {
               }}
             >
               <div className=" flex gap-[357] justify-center items-center h-[159]">
-                <div className="flex gap-10 justify-center items-center">
+                <div className="flex gap-10 justify-center items-center relative">
                   <div className="text-6xl w-[65] h-[77]">{j.h1}</div>
                   <div className="w-[612] h-[38] text-3xl">{j.h2}</div>
+                  <div className="absolute text-5xl text-black right-[-400] bottom-4">
+                    +
+                  </div>
                 </div>
                 <div>
                   <img src={j.img} />

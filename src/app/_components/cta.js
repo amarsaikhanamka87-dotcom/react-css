@@ -1,7 +1,7 @@
 export const CTA = () => {
   return (
     <div className="flex justify-center items-center  bg-gray-50 ">
-      <div className="w-310 h-86.75 bg-[ #F3F3F3] rounded-2xl flex gap-46.5 justify-center items-center">
+      <div className="w-310 h-86.75 bg-[#F3F3F3] rounded-3xl flex gap-25 justify-center items-center">
         <div className="flex flex-col gap-8 w-125 h-56.75">
           <h1 className="h-9.5 text-black text-3xl">
             Let’s make things happen
