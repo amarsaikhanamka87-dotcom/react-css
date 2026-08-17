@@ -1,3 +1,5 @@
+import { Button } from "./button.js/";
+
 export const Hero = () => {
   return (
     <div className=" flex gap-25 items-center  text-black bg-gray-50 ">
@@ -10,9 +12,7 @@ export const Hero = () => {
           through a range of services including SEO, PPC, social media
           marketing, and content creation.
         </p>
-        <div className="px-8.75 py-5  w-55 rounded-[14px] border bg-black text-white ">
-          Book a consultation
-        </div>
+        <Button label="Book a consultation-1" variant="dark" />
       </div>
       <div className="flex-1  ">
         <img src="/logo.png" />

@@ -1,11 +1,11 @@
 const cards = [
   {
     id: 1,
-    h1: "Search engine optimization",
-    color: "#F3F3F3",
+    h1: "Pay-per-click advertising",
+    className: "bg-[#B9FF66] text-white",
     img: "/logo (3).png",
     p: "Learn more",
-    backgroundColor: "#B9FF66",
+    //backgroundColor: "#B9FF66",
   },
   {
     id: 2,
@@ -18,6 +18,7 @@ const cards = [
   {
     id: 3,
     h1: "Social Media Marketing",
+    className: "bg-[#B9FF66] text-white",
     color: "#191A23",
     img: "/a(4).png",
     p: "Learn more",
@@ -26,6 +27,7 @@ const cards = [
   {
     id: 4,
     h1: "Email Marketing",
+    className: "bg-[#B9FF66] text-white",
     color: "#F3F3F3",
     img: "/logo 4.png",
     p: "Learn more",
@@ -56,7 +58,7 @@ export const Card = () => {
         {cards.map((item) => {
           return (
             <div
-              key={item}
+              key={item.id}
               style={{
                 backgroundColor: item.color,
                 width: "600px",
@@ -67,7 +69,7 @@ export const Card = () => {
             >
               <div className="flex gap-15 justify-center items-center w-[600] h-[310]">
                 <div className="flex flex-col gap-25 w-[197] h-[210] ">
-                  <div className="text-2xl text-black  bg-[#B9FF66] w-[160]">
+                  <div className="text-2xl text-black bg-{item.className} w-[160] ">
                     {item.h1}
                   </div>
                 

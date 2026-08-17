@@ -10,3 +10,4 @@ export * from "./team";
 export * from "./testimonials";
 export * from "./contact";
 export * from "./footer.js";
+export * from "./button.js";
