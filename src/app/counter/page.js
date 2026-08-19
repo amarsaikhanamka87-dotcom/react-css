@@ -6,13 +6,12 @@ const Page = () => {
   const [value, setValue] = useState("");
   const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState("all");
-  const [count, setCount] = useState(0);
-  const [checkNum, setcheckNum] = useState(0);
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
 
+  //add
   const handleClick = () => {
     if (!value.trim()) return;
     setTasks([
@@ -20,23 +19,21 @@ const Page = () => {
       { task: value, isCompleted: false, id: Math.random() },
     ]);
     setValue("");
-    setCount(count + 1);
   };
 
+  //checkbox
   const handleChecked = (id) => {
     setTasks(
       tasks.map((el) => {
         return id === el.id ? { ...el, isCompleted: !el.isCompleted } : el;
       }),
     );
-    setcheckNum(checkNum + 1);
   };
+
+  const completedNum = tasks.filter((task) => task.isCompleted).length;
 
   const handleDelete = (id) => {
     setTasks(tasks.filter((i) => i.id !== id));
-
-    setCount(count - 1);
-    setcheckNum(checkNum - 1);
   };
 
   const handleAll = () => {
@@ -58,15 +55,31 @@ const Page = () => {
 
     return true;
   });
+  const deleteCompleted = () => {
+    setTasks(tasks.filter((t) => !t.isCompleted));
+  };
+  const enter = (event) => {
+    if (event.key === "Enter") {
+      handleClick();
+    }
+  };
 
   return (
-    <div className="h-screen w-screen flex flex-col gap-8 bg-white justify-center items-center">
-      <div className="shadow-2xl shadow-black bg-gray-50 p-5 rounded-2xl flex flex-col gap-8">
+    <div className="flex flex-col gap-8 bg-white justify-center items-center relative">
+      <div className="shadow-2xl shadow-black bg-gray-50 p-5 rounded-2xl flex flex-col gap-8 absolute top-20">
         <div className="flex gap-10">
-          <div className="flex flex-col border border-amber-900 text-black w-80 bg-gray-50">
-            <input value={value} onChange={handleChange} />
-          </div>
-          <button onClick={handleClick} className="text-black border ">
+          <input
+            value={value}
+            onChange={handleChange}
+            onKeyDown={enter}
+            placeholder="     Write here ..."
+            className="flex flex-col border rounded-2xl border-gray-500 text-black w-80 justify-evenly"
+          />
+
+          <button
+            onClick={handleClick}
+            className="text-black border  rounded-2xl py-0.5 px-3"
+          >
             add
           </button>
         </div>
@@ -95,7 +108,7 @@ const Page = () => {
             return (
               <div
                 key={index}
-                className="border border-blue-950 p-4 text-black w-100 flex  gap-30 bg-gray-200 "
+                className="border border-gray-500 rounded-2xl p-4 text-black w-100 flex  gap-30  "
               >
                 <div className="flex gap-5 w-50">
                   <input
@@ -105,7 +118,12 @@ const Page = () => {
                   />
                   {item.task}
                 </div>
-                <button onClick={() => handleDelete(item.id)}>Delete</button>
+                <button
+                  onClick={() => handleDelete(item.id)}
+                  className=" py-0.5 px-2 rounded-2xl bg-red-100"
+                >
+                  Delete
+                </button>
               </div>
             );
           })}
@@ -113,10 +131,13 @@ const Page = () => {
         <div className="w-100 h-[1px] bg-black"></div>
         <div className="text-1xl text-black  flex gap-18 justify-center">
           <p>
-            {checkNum} of {count} tasks completed
+            {completedNum} of {tasks.length} tasks completed
           </p>
-          <button className="border border-red-100 rounded-2xl px-5 bg-red-100">
-            clear completed
+          <button
+            onClick={deleteCompleted}
+            className="border border-red-100 rounded-2xl px-5 bg-red-100"
+          >
+            Clear completed
           </button>
         </div>
         <div className="flex gap-2 text-gray-500 justify-center">
