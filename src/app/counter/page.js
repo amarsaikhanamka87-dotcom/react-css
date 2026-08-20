@@ -116,7 +116,7 @@ const Page = () => {
                     checked={item.isCompleted}
                     onChange={() => handleChecked(item.id)}
                   />
-                  {item.task}
+                  {item.task} //minii bichsen value
                 </div>
                 <button
                   onClick={() => handleDelete(item.id)}
